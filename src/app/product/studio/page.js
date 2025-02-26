@@ -120,7 +120,7 @@ function page() {
   ];
   return (
     <>
-      <div className="bg-black bg-[url('/studio/studioMain.svg')] bg-no-repeat bg-cover">
+      <div className="bg-black bg-[url('/studio/studioMain.svg')] bg-no-repeat bg-cover pt-20">
       <div className="w-full px-5 md:max-w-5xl lg:max-w-[88rem] mx-auto flex flex-col sm:flex-row py-16">
         {/* Left Content Column */}
         <div className="w-full mb-4 sm:mb-0 sm:w-1/2 flex flex-col h-full my-auto justify-center items-center">
