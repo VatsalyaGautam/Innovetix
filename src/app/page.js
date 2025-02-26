@@ -1,7 +1,16 @@
-export default function Home() {
+import NotFound from '@/components/NotFound'
+import React from 'react'
+
+function page() {
   return (
     <>
-    <h1>Innovetix</h1>
+    <div className="justify-center flex items-center min-h-screen flex-col">
+    <NotFound/>
+  <h1 className='text-6xl font-light text-black font-inter'>Home Page - Innovetix</h1>    
+    </div>
+
     </>
-  );
+  )
 }
+
+export default page

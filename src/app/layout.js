@@ -12,7 +12,6 @@ const inter = Inter({
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
-  weight: ["300","400", "500", "600", "700"],
 });
 
 export const metadata = {
@@ -24,7 +23,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${poppins.variable} antialiased`}
+        className={`${inter.variable} ${poppins.variable} antialiased overflow-x-clip`}
       >
          <Navbar/>
         {children}
