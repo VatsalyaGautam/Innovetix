@@ -7,12 +7,13 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import Image from "next/legacy/image";
+import ScrollReveal from "@/components/ScrollReveal";
 const TechSuite = () => {
   return (
     <div className="bg-slate-50">
       <div className="bg-slate-50 h-auto py-9 md:py-16 w-full px-5 md:max-w-5xl lg:max-w-6xl mx-auto flex flex-col gap-16">
         {/* Header Section */}
-        <div className="text-center space-y-4">
+        <ScrollReveal  animation="slideDown" duration={800} easing="smooth" className="text-center space-y-4">
           <p className="text-blue-700 font-semibold text-lg">Build</p>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
             Advanced Technology Suite
@@ -30,12 +31,12 @@ const TechSuite = () => {
             "Our 100+ custom-built mobile apps have been featured on the popular
             app store"
           </p>
-        </div>
+        </ScrollReveal>
 
         {/* Main Content */}
         <div className="flex flex-col lg:flex-row items-center gap-12">
           {/* Left side with accordion */}
-          <div className="lg:w-1/2 w-full space-y-4">
+          <ScrollReveal  animation="slideRight" duration={800} easing="smooth" className="lg:w-1/2 w-full space-y-4">
             <Accordion
               type="single"
               collapsible
@@ -105,17 +106,17 @@ const TechSuite = () => {
               Get Your Complete Tech Suite
               <ArrowRight className="w-5 h-5" />
             </button>
-          </div>
+          </ScrollReveal>
 
           {/* Right side image placeholder */}
-          <div className="lg:w-1/2 w-full h-[15rem] md:h-[20rem] lg:h-[25rem] relative">
+          <ScrollReveal  animation="slideLeft" duration={800} easing="smooth" className="lg:w-1/2 w-full h-[15rem] md:h-[20rem] lg:h-[25rem] relative">
             <Image
               src="/studio/studioDigital.svg"
               layout="fill"
               alt="studioHero"
               objectFit="contain"
             />
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </div>

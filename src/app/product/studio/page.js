@@ -263,7 +263,7 @@ function page() {
           </div>
 
           {/* Bottom CTA section */}
-          <div className="text-center">
+          <ScrollReveal animation="slideUp" duration={800} easing="gentle"  className="text-center">
             <h2 className="text-gray-500 text-2xl font-bold mb-4">
               Looking For Custom Mobile App Development To Fuel Your Business
               Growth?
@@ -276,14 +276,14 @@ function page() {
               Let&apos;s Discuss
               <ArrowRight className="ml-2" size={24} />
             </button>
-          </div>
+          </ScrollReveal>
         </div>
       </div>
 
       <div className="bg-slate-50">
         <div className="bg-slate-50 h-auto py-16 md:py-28  w-full px-5 md:max-w-5xl lg:max-w-6xl mx-auto flex flex-col items-center">
           {/* Header Section */}
-          <div className="text-center mb-8 md:mb-20">
+          <ScrollReveal animation="slideDown" duration={800} easing="smooth" className="text-center mb-8 md:mb-20">
             <h1 className="text-4xl font-bold mb-4">
               <span className="text-[#B8982C]">Not Just Technology</span>, We
               Focus On Everything
@@ -295,12 +295,12 @@ function page() {
               <br />
               With CB Studio&apos;s Exceptional Android & iOS App Development
             </p>
-          </div>
+          </ScrollReveal>
 
           {/* Main Content Section */}
           <div className="w-full flex flex-col lg:flex-row justify-between items-center ">
             {/* Left Content */}
-            <div className="lg:w-2/6 mb-10">
+            <ScrollReveal animation="slideRight" duration={800} easing="smooth" className="lg:w-2/6 mb-10">
               <h3 className="text-[#B8982C] text-2xl mb-4">Validation</h3>
               <h2 className="text-4xl font-medium mb-6">
                 Business Planning With
@@ -315,22 +315,22 @@ function page() {
                 Get Your Business Plan Ready
                 <ArrowRight size={20} />
               </button>
-            </div>
+            </ScrollReveal>
 
             {/* Right Content - Placeholder for images */}
-            <div className="w-full lg:w-4/6 h-[22rem] flex justify-center p-4 relative">
+            <ScrollReveal animation="slideLeft" duration={800} easing="smooth" className="w-full lg:w-4/6 h-[22rem] flex justify-center p-4 relative">
               <Image
                 src="/studio/studioTablet.svg"
                 layout="fill"
                 alt="studioHero"
                 objectFit="contain"
               />
-            </div>
+            </ScrollReveal>
           </div>
 
           {/* Bottom Features */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-10">
-      <div className="text-center">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-10">
+            <ScrollReveal animation="slideRight" duration={800} easing="smooth" className="text-center">
         <div id="outOfContextImageDiv" className="w-16 h-16 bg-[#C59E12] rounded-full mx-auto mb-6 relative flex items-center justify-center">
           <Image
             src="/studio/manWithLaptop.svg"
@@ -348,9 +348,10 @@ function page() {
           will be examining the technical & financial feasibility of your
           idea.
         </p>
-      </div>
+      </ScrollReveal>
       
       <div className="text-center">
+         <ScrollReveal animation="slideUp" duration={800} easing="smooth">
         <div id="outOfContextImageDiv" className="w-16 h-16 bg-[#C59E12] rounded-full mx-auto mb-6 relative flex items-center justify-center">
           <Image
             src="/studio/bulb.svg"
@@ -368,9 +369,11 @@ function page() {
           few years? Let experts answer such questions with insightful
           data.
         </p>
+        </ScrollReveal>
       </div>
       
       <div className="text-center">
+      <ScrollReveal animation="slideLeft" duration={800} easing="smooth">
         <div id="outOfContextImageDiv" className="w-16 h-16 bg-[#C59E12] rounded-full mx-auto mb-6 relative flex items-center justify-center">
           <Image
             src="/studio/electron.svg"
@@ -388,23 +391,25 @@ function page() {
           with a strategic business plan, which roadmaps your success
           journey.
         </p>
+        </ScrollReveal>
       </div>
-    </div>
+   
         </div>
       </div>
       <div className="bg-black  bg-[url('/studio/studioMain.svg')] bg-no-repeat bg-cover">
         <div className=" h-auto lg:h-[45rem]  w-full px-5 md:max-w-5xl lg:max-w-6xl mx-auto flex flex-col lg:flex-row items-center lg:justify-between gap-16 ">
-          <div className="lg:w-1/2 h-full relative ">
+          <ScrollReveal  animation="slideRight" duration={800} easing="smooth" className="lg:w-1/2 h-full relative ">
             <Image
               src="/studio/studioBig.png"
               layout="fill"
               alt="studioHero"
               objectFit="contain"
             />
-          </div>
+          </ScrollReveal>
 
           {/* Right side content */}
-          <div className="lg:w-1/2 space-y-8 pb-16 lg:pb-28 lg:pt-16">
+          
+          <ScrollReveal  animation="slideLeft" duration={800} easing="smooth" className="lg:w-1/2 space-y-8 pb-16 lg:pb-28 lg:pt-16">
             <h2 className="text-3xl md:text-4xl font-bold text-yellow-500">
               Product Strategy With Our In-House Design Studio
             </h2>
@@ -463,21 +468,23 @@ function page() {
                 <ArrowRight className="w-5 h-5" />
               </button>
             </div>
-          </div>
+          </ScrollReveal>
+      
         </div>
       </div>
       <TechSuite />
+
       <div className="bg-black bg-[url('/studio/studioMain.svg')] bg-no-repeat bg-cover">
         <div className="h-auto py-16 md:py-28  w-full px-5 md:max-w-5xl lg:max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-16">
-          <div className="hidden lg:block w-full lg:w-1/2 h-[40rem] relative">
+             <ScrollReveal  animation="slideRight" duration={800} easing="smooth" className="hidden lg:block w-full lg:w-1/2 h-[40rem] relative">
             <Image
               src="/studio/studioComingSoon.svg"
               layout="fill"
               objectFit="contain"
               alt="Coming Soon"
             />
-          </div>
-          <div className="lg:w-1/2 space-y-8">
+          </ScrollReveal>
+          <ScrollReveal  animation="slideLeft" duration={800} easing="smooth" className="lg:w-1/2 space-y-8">
             {/* Header */}
             <div className="space-y-4">
               <p className="text-blue-400 text-lg font-medium">Launch</p>
@@ -536,14 +543,14 @@ function page() {
               Prepare Your App For The &apos;Big&apos; Launch
               <ArrowRight className="w-5 h-5" />
             </button>
-          </div>
+          </ScrollReveal>
         </div>
       </div>
 
       <div className="bg-slate-50">
         <div className="bg-slate-50 h-auto py-12 md:py-24 w-full px-5 md:max-w-5xl lg:max-w-[88rem] mx-auto flex flex-col gap-16">
           {/* Header Section */}
-          <div className="text-center space-y-4">
+          <ScrollReveal  animation="slideDown" duration={800} easing="smooth" className="text-center space-y-4">
             <p className="text-blue-700 font-semibold text-lg">Grow</p>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
               Data-driven Insights & Analytics
@@ -553,12 +560,12 @@ function page() {
               customers, 6 times to retain customers & 19 times to be
               profitable.
             </p>
-          </div>
+          </ScrollReveal>
 
           {/* Features Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
             {/* Left Side Features */}
-            <div className="space-y-8">
+            <ScrollReveal  animation="slideRight" duration={800} easing="smooth" className="space-y-8">
               <div className="bg-gray-200 p-6 rounded-lg text-center">
                 <p className="text-gray-800 font-medium">
                   See your data in new ways with help of dedicated analytic
@@ -571,20 +578,20 @@ function page() {
                   making.
                 </p>
               </div>
-            </div>
+            </ScrollReveal>
 
             {/* Center Dashboard Image */}
-            <div className="w-full bg-gray-200 rounded-lg flex items-center h-[22rem] justify-center relative">
+            <ScrollReveal  animation="slideUp" duration={800} easing="smooth"  className="w-full bg-gray-200 rounded-lg flex items-center h-[22rem] justify-center relative">
               <Image
                 src="/studio/studioAIGenerated.svg"
                 layout="fill"
                 objectFit="cover"
                 alt="Ai Dashboard"
               />
-            </div>
+            </ScrollReveal>
 
             {/* Right Side Features */}
-            <div className="space-y-8">
+            <ScrollReveal  animation="slideLeft" duration={800} easing="smooth"  className="space-y-8">
               <div className="bg-gray-200 p-6 rounded-lg text-center">
                 <p className="text-gray-800 font-medium">
                   Get AI-Driven insights to help you navigate your next &
@@ -597,22 +604,22 @@ function page() {
                   platform.
                 </p>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
 
           {/* CTA Button */}
-          <div className="flex justify-center">
+          <ScrollReveal  animation="slideUp" duration={800} easing="smooth"  className="flex justify-center">
             <button className="bg-blue-700 text-white px-8 py-4 rounded-lg font-medium flex items-center gap-2 hover:bg-blue-800 transition-colors">
               Uncover Insights For Better Decisions
               <ArrowRight className="w-5 h-5" />
             </button>
-          </div>
+          </ScrollReveal>
         </div>
       </div>
       <div className="bg-black">
         <div className="bg-black h-auto py-16 md:py-28 w-full px-5 md:max-w-5xl lg:max-w-6xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-10">
           {/* Left Content */}
-          <div className="flex flex-col gap-8 lg:w-1/2">
+          <ScrollReveal  animation="slideRight" duration={800} easing="smooth"   className="flex flex-col gap-8 lg:w-1/2">
             <div className="text-blue-400 text-lg font-medium">Funding</div>
             <h2 className="text-white text-4xl font-bold leading-tight">
               Assured Funding & Powerful Investor Pitch Deck To Help You Scale
@@ -676,70 +683,86 @@ function page() {
               Leverage From Assured Funding
               <span className="text-xl">→</span>
             </button>
-          </div>
+          </ScrollReveal>
 
           {/* Right Content - Image */}
-          <div className="w-3/4 lg:w-1/2 flex justify-center items-center h-[20rem] md:h-[30rem] lg:h-[44rem] relative">
+          <ScrollReveal  animation="slideLeft" duration={800} easing="smooth"  className="w-3/4 lg:w-1/2 flex justify-center items-center h-[20rem] md:h-[30rem] lg:h-[44rem] relative">
             <Image src="/studio/studioGrowth.svg" layout="fill" alt="growth" />
-          </div>
+          </ScrollReveal>
         </div>
       </div>
 
       <div className="bg-slate-50 relative overflow-hidden">
-        <Image
-          layout="fill"
-          objectFit="contain"
-          alt="vector-graphic"
-          className="pointer-events-none absolute !-top-[66rem] lg:!-top-[35rem] z-20 opacity-25 xl:opacity-15"
-          src="/studio/vector.svg"
-        />
-        <div className="bg-slate-50 h-auto py-16 md:py-28   w-full px-5 md:max-w-5xl lg:max-w-6xl mx-auto flex flex-col gap-14 lg:gap-24 relative z-10">
-          {/* Top Section */}
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Stats Grid */}
-            <div className="grid grid-cols-2 gap-8">
-              {stats.map((stat, index) => (
-                <div
-                  key={index}
-                  className="flex flex-col items-center text-center"
-                >
+      <Image
+        layout="fill"
+        objectFit="contain"
+        alt="vector-graphic"
+        className="pointer-events-none absolute !-top-[66rem] lg:!-top-[35rem] z-20 opacity-25 xl:opacity-15"
+        src="/studio/vector.svg"
+      />
+      <div className="bg-slate-50 h-auto py-16 md:py-28 w-full px-5 md:max-w-5xl lg:max-w-6xl mx-auto flex flex-col gap-14 lg:gap-24 relative z-10">
+        {/* Top Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Stats Grid */}
+          <div className="grid grid-cols-2 gap-8">
+            {stats.map((stat, index) => (
+              <ScrollReveal
+                key={index}
+                animation="scaleUp"
+                delay={200}
+                stagger={100}
+                index={index}
+                easing="spring"
+                duration={800}
+              >
+                <div className="flex flex-col items-center text-center">
                   <div className="w-16 h-16 bg-blue-100 rounded-full mb-4 flex items-center justify-center">
                     {stat.icon}
                   </div>
                   <h3 className="text-4xl font-bold mb-2">{stat.number}</h3>
                   <p className="text-gray-600 text-sm">{stat.text}</p>
                 </div>
-              ))}
-            </div>
+              </ScrollReveal>
+            ))}
+          </div>
 
-            {/* Right side content */}
-            <div className="flex flex-col gap-6">
+          {/* Right side content */}
+          <div className="flex flex-col gap-6">
+            <ScrollReveal animation="slideRight" delay={300} duration={900} easing="gentle">
               <h2 className="text-3xl font-bold">
-                Choose Top 1% Of Industry Talent To Boost Your Growth & Success
-                Graph Exponentially
+                Choose Top 1% Of Industry Talent To Boost Your Growth & Success Graph Exponentially
               </h2>
-              <div className="flex flex-col gap-4">
-                {features.map((feature, index) => (
-                  <div key={index} className="flex items-center gap-2">
+            </ScrollReveal>
+
+            <div className="flex flex-col gap-4">
+              {features.map((feature, index) => (
+                <ScrollReveal 
+                  key={index} 
+                  animation="slideRight" 
+                  delay={500} 
+                  stagger={100} 
+                  index={index} 
+                  easing="smooth"
+                  duration={700}
+                >
+                  <div className="flex items-center gap-2">
                     <ChevronsRight className="text-blue-600" />
                     <p>{feature}</p>
                   </div>
-                ))}
-              </div>
+                </ScrollReveal>
+              ))}
+            </div>
 
-              {/* Dark Card */}
+            {/* Dark Card */}
+            <ScrollReveal animation="fadeIn" delay={800} duration={1200} easing="bouncy">
               <div className="relative bg-slate-900 max-w-xl text-white p-8 rounded-lg overflow-hidden z-40">
                 <DiagonalLinePattern />
                 <div className="relative z-10">
                   <h3 className="text-2xl font-semibold leading-tight mb-3">
-                    Looking For Custom Built Applications To Fuel Your Business
-                    Growth?
+                    Looking For Custom Built Applications To Fuel Your Business Growth?
                   </h3>
                   <p className="text-gray-300 text-lg mb-4 max-w-2xl">
-                    Transform Your Business Digitally With Our Advanced Tech
-                    Suite, Backed By Our Premium Application Development
-                    Services
+                    Transform Your Business Digitally With Our Advanced Tech Suite, Backed By Our Premium Application Development Services
                   </p>
                   <button className="bg-white text-black px-8 py-3 rounded-lg flex items-center gap-2 text-lg font-medium hover:bg-gray-100 transition-colors">
                     Get Started
@@ -749,23 +772,33 @@ function page() {
                   </button>
                 </div>
               </div>
-            </div>
-          </div>
-
-          {/* Bottom Section */}
-          <div className="bg-gradient-to-r from-[#224064] to-[#14242C] text-white p-16 rounded-lg flex flex-col md:flex-row justify-between items-center gap-8">
-            <div>
-              <h2 className="text-4xl font-bold mb-8">
-                Let&apos;s Build Your Premium Mobile Apps & Technology Solutions
-              </h2>
-              <button className="border border-white px-8 py-3 font-bold  text-2xl rounded-lg flex items-center gap-2">
-                Let&apos;s Begin
-                <ChevronRight className="w-4 h-4" />
-              </button>
-            </div>
-            <div className="w-64 hidden lg:block h-64">{/* Image placeholder */}</div>
+            </ScrollReveal>
           </div>
         </div>
+
+        {/* Bottom Section */}
+        <ScrollReveal animation="slideUp" delay={400} duration={1000} easing="gentle">
+          <div className="bg-gradient-to-r from-[#224064] to-[#14242C] text-white p-16 rounded-lg flex flex-col md:flex-row justify-between items-center gap-8">
+            <div>
+              <ScrollReveal animation="fadeSlideRight" delay={600} duration={800}>
+                <h2 className="text-4xl font-bold mb-8">
+                  Let&apos;s Build Your Premium Mobile Apps & Technology Solutions
+                </h2>
+              </ScrollReveal>
+              <ScrollReveal animation="fadeIn" delay={900} duration={800}>
+                <button className="border border-white px-8 py-3 font-bold text-2xl rounded-lg flex items-center gap-2 hover:bg-white hover:text-[#224064] transition-colors duration-300">
+                  Let&apos;s Begin
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+              </ScrollReveal>
+            </div>
+            <ScrollReveal animation="scaleUp" delay={800} duration={1100} easing="spring">
+              <div className="w-64 hidden lg:block h-64 rounded-full bg-white/10 backdrop-blur-sm"></div>
+            </ScrollReveal>
+          </div>
+        </ScrollReveal>
+      </div>
+    </div>
       </div>
     </>
   );
