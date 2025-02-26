@@ -120,7 +120,7 @@ function page() {
   ];
   return (
     <>
-      <div className="bg-black bg-[url('/studio/studioMain.svg')] bg-no-repeat bg-cover pt-20">
+      <div className="bg-black bg-[url('/studio/studioMain.svg')] bg-no-repeat bg-cover">
       <div className="w-full px-5 md:max-w-5xl lg:max-w-[88rem] mx-auto flex flex-col sm:flex-row py-16">
         {/* Left Content Column */}
         <div className="w-full mb-4 sm:mb-0 sm:w-1/2 flex flex-col h-full my-auto justify-center items-center">
@@ -136,7 +136,7 @@ function page() {
               </ScrollReveal>
               
               {/* Subheading with different animation */}
-              <ScrollReveal animation="slideRight" duration={800} delay={300} easing="gentle">
+              <ScrollReveal animation="slideRight" duration={800} delay={100} easing="gentle">
                 <p className="text-white text-3xl leading-snug md:leading-normal">
                   To Build Exceptional Technology Solution For Your
                   Unique Business Ideas
@@ -145,10 +145,10 @@ function page() {
             </div>
             
             {/* Button with bouncy animation */}
-            <ScrollReveal animation="slideUp" duration={800} delay={400} easing="bouncy">
+            <ScrollReveal animation="slideUp" duration={800} delay={300} easing="bouncy">
               <button className="border-2 text-left p-2 sm:p-3 md:p-4 text-white text-2xl justify-around w-fit sm:w-auto max-w-80 border-white flex hover:bg-white hover:text-black transition-colors duration-300">
                 Book Free Consulation{" "}
-                <ScrollReveal animation="slideLeft" duration={700} delay={700} easing="spring">
+                <ScrollReveal animation="slideLeft" duration={700} delay={500} easing="spring">
                   <CircleArrowRight size={32} fill="white" stroke="black" />
                 </ScrollReveal>
               </button>

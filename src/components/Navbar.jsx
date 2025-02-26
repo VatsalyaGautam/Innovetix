@@ -4,7 +4,7 @@ import ShinyButton from "./ui/ShinyButton";
 import MobileMenuButton from "./ui/NavButton";
 
 const Navbar = () => {
-  // Navigation items with dropdown configurations
+  
   const navigationItems = [
     { title: "Home", link: "/" },
     { title: "About", link: "#" },
@@ -168,7 +168,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Separate script tag that will be placed at the end of the body */}
+  
       <script
         id="navbar-script"
         dangerouslySetInnerHTML={{
