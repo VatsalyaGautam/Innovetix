@@ -1,4 +1,4 @@
-import StartupLanding from '../../components/StartupCompo/Startup'
+import StartupLanding from '@/components/StartupCompo/Startup'
 
 export default function Home() {
     return (
