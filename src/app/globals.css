@@ -66,3 +66,6 @@
     @apply bg-background text-foreground;
   }
 }
+#outOfContextImageDiv > span{
+  overflow: visible!important;
+}

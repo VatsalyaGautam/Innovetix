@@ -1,0 +1,28 @@
+
+  <svg
+    className="absolute h-full w-full top-0 left-0 pointer-events-none"
+    viewBox="0 0 1728 712"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    {/* Main curved path */}
+    <path
+      d="M0 711L167.627 528.872L348.685 636.448L429.763 497.35H569.535L714.282 391.775L942.096 365.757L1124.65 289.203L1338.53 306.715L1433.54 185.13L1600.67 152.106L1729 1"
+      stroke="#666666"
+      strokeOpacity="0.4"
+    />
+    
+
+    <circle cx="0" cy="711" r="8" fill="#666666" fillOpacity="0.4" />
+    <circle cx="167.627" cy="528.872" r="8" fill="#666666" fillOpacity="0.4" />
+    <circle cx="348.685" cy="636.448" r="8" fill="#666666" fillOpacity="0.4" />
+    <circle cx="429.763" cy="497.35" r="8" fill="#666666" fillOpacity="0.4" />
+    <circle cx="569.535" cy="497.35" r="8" fill="#666666" fillOpacity="0.4" />
+    <circle cx="714.282" cy="391.775" r="8" fill="#666666" fillOpacity="0.4" />
+    <circle cx="942.096" cy="365.757" r="8" fill="#666666" fillOpacity="0.4" />
+    <circle cx="1124.65" cy="289.203" r="8" fill="#666666" fillOpacity="0.4" />
+    <circle cx="1338.53" cy="306.715" r="8" fill="#666666" fillOpacity="0.4" />
+    <circle cx="1433.54" cy="185.13" r="8" fill="#666666" fillOpacity="0.4" />
+    <circle cx="1600.67" cy="152.106" r="8" fill="#666666" fillOpacity="0.4" />
+    <circle cx="1729" cy="1" r="8" fill="#666666" fillOpacity="0.4" />
+  </svg>

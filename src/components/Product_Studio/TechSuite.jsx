@@ -6,11 +6,11 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import Image from "next/image";
+import Image from "next/legacy/image";
 const TechSuite = () => {
   return (
     <div className="bg-slate-50">
-      <div className="bg-slate-50 h-auto pb-28 pt-16 w-full px-5 md:max-w-5xl lg:max-w-6xl mx-auto flex flex-col gap-16">
+      <div className="bg-slate-50 h-auto py-9 md:py-16 w-full px-5 md:max-w-5xl lg:max-w-6xl mx-auto flex flex-col gap-16">
         {/* Header Section */}
         <div className="text-center space-y-4">
           <p className="text-blue-700 font-semibold text-lg">Build</p>
@@ -108,7 +108,7 @@ const TechSuite = () => {
           </div>
 
           {/* Right side image placeholder */}
-          <div className="lg:w-1/2 w-full h-[25rem] relative">
+          <div className="lg:w-1/2 w-full h-[15rem] md:h-[20rem] lg:h-[25rem] relative">
             <Image
               src="/studio/studioDigital.svg"
               layout="fill"

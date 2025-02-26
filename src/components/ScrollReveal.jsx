@@ -6,7 +6,10 @@ const ANIMATIONS = {
   slideRight: 'opacity-0 -translate-x-64', // Slide from left to right
   slideDown: 'opacity-0 -translate-y-64', // Slide from top to bottom
   slideUp: 'opacity-0 translate-y-64', // Slide from bottom to top
-  fadeSlideLeft: 'opacity-0 -translate-x-64 scale-95'
+  fadeSlideLeft: 'opacity-0 translate-x-64 scale-95',
+  fadeSlideRight: 'opacity-0 -translate-x-64 scale-95',
+  slightLeft : 'opacity-0 translate-x-16',
+  slightRight : 'opacity-0 -translate-x-16',
 };
 
 const EASINGS = {

@@ -1,10 +1,15 @@
+import NotFound from '@/components/NotFound'
 import React from 'react'
 
 function page() {
   return (
-    <div className="justify-center flex items-center min-h-screen bg-black">
-       <h1 className="text-white text-6xl">Innovetix - Product page</h1>
+    <>
+    <div className="justify-center flex items-center min-h-screen flex-col">
+    <NotFound/>
+  <h1 className='text-6xl font-light text-black font-inter'>Product Page - Innovetix</h1>    
     </div>
+
+    </>
   )
 }
 

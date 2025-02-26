@@ -148,50 +148,55 @@ export default {
   	}
   },
   plugins: [
-
-      plugin(({ addComponents, theme }) => {
-        const sizes = [
-          "xs",
-          "sm",
-          "base",
-          "lg",
-          "xl",
-          "2xl",
-          "3xl",
-          "4xl",
-          "5xl",
-          "6xl",
-          "7xl",
-          "8xl",
-          "9xl",
-        ];
+	plugin(({ addComponents, theme }) => {
+	  const sizes = [
+		"xs",
+		"sm",
+		"base",
+		"lg",
+		"xl",
+		"2xl",
+		"3xl",
+		"4xl",
+		"5xl",
+		"6xl",
+		"7xl",
+		"8xl",
+		"9xl",
+	  ];
   
-        const responsiveText = {};
+	  const responsiveText = {};
+	  
+	  // Helper function to get max-width that's 1px less than the breakpoint
+	  const getMaxWidth = (breakpoint) => {
+		const pixelValue = parseInt(theme(`screens.${breakpoint}`));
+		return `${pixelValue - 1}px`;
+	  };
   
-        sizes.forEach((size, index) => {
-          if (index === 0) return;
+	  sizes.forEach((size, index) => {
+		if (index === 0) return;
   
-          const prevSize = sizes[index - 1];
-          const prevPrevSize = sizes[index - 2] || "xs";
-          const prevPrevPrevSize = sizes[index - 3] || "xs";
+		const prevSize = sizes[index - 1];
+		const prevPrevSize = sizes[index - 2] || "xs";
+		const prevPrevPrevSize = sizes[index - 3] || "xs";
   
-          responsiveText[`.text-${size}`] = {
-            fontSize: `${theme(`fontSize.${size}`)} !important`, // ✅ Ensure higher specificity
-            [`@media (max-width: ${theme("screens.lg")})`]: {
-              fontSize: `${theme(`fontSize.${prevSize}`)} !important`,
-            },
-            [`@media (max-width: ${theme("screens.md")})`]: {
-              fontSize: `${theme(`fontSize.${prevPrevSize}`)} !important`,
-            },
-            [`@media (max-width: ${theme("screens.sm")})`]: {
-              fontSize: `${theme(`fontSize.${prevPrevPrevSize}`)} !important`,
-            },
-          };
-        });
+		responsiveText[`.text-${size}`] = {
+		  fontSize: `${theme(`fontSize.${size}`)} !important`, // ✅ Ensure higher specificity
+		  [`@media (max-width: ${getMaxWidth("lg")})`]: {
+			fontSize: `${theme(`fontSize.${prevSize}`)} !important`,
+		  },
+		  [`@media (max-width: ${getMaxWidth("md")})`]: {
+			fontSize: `${theme(`fontSize.${prevPrevSize}`)} !important`,
+		  },
+		  [`@media (max-width: ${getMaxWidth("sm")})`]: {
+			fontSize: `${theme(`fontSize.${prevPrevPrevSize}`)} !important`,
+		  },
+		};
+	  });
   
-        addComponents(responsiveText);
-      }),
-      require("tailwindcss-animate")
-],
+	  addComponents(responsiveText);
+	}),
+	require("tailwindcss-animate")
+  ],
  
 };
