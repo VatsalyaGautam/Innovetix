@@ -17,7 +17,7 @@ const Navbar = () => {
           title: "Intelligence",
           description: "Transforming Businesses with Custom AI Solutions",
           icon: "/icons/intelligence-icon.png",
-          link: "#intelligence"
+          link: "/product/intelligence"
         },
         {
           title: "Studio",
@@ -35,7 +35,7 @@ const Navbar = () => {
           title: "Apps",
           description: "AI-Powered App Builder Platform",
           icon: "/icons/apps-icon.png",
-          link: "#apps"
+          link: "/product/apps"
         }
       ]
     },
@@ -77,7 +77,7 @@ const Navbar = () => {
   return (
     <>
       {/* Navbar */}
-      <nav className="navbar fixed top-0 left-0 right-0 z-50 w-full bg-black border-b border-gray-800 transition-all duration-300">
+      <nav className="navbar fixed top-0 left-0 right-0 z-50 w-full bg-black border-b border-gray-800 transition-all duration-300 animate-slideInTop">
         <div className="w-full px-2 lg:px-4">
           <div className="flex h-20 items-center justify-between lg:justify-around">
             {/* Left section - Logo */}
