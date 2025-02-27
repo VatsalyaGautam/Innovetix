@@ -1,231 +1,174 @@
 "use client";
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 const ServiceCarousel = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
-  const carouselRef = useRef(null);
-  
-  // Service data
-  const services = [
+  const [services, setServices] = useState([
     {
+      id: 1,
+      name: "GROCERY DELIVERY",
+      image: "/apps/groceryDelivery.svg",
+      pageNum: 1,
+      position: 2// left
+    },
+    {
+      id: 2,
       name: "LAUNDRY SERVICE",
       image: "/apps/laundryService.svg",
-      pageNum: 1,
-      subtitle: "Fresh & Clean",
-      price: "$20"
-    },
-    {
-      name: "DRY CLEANING",
-      image: "/api/placeholder/400/320",
       pageNum: 2,
-      subtitle: "Dress & Shine",
-      price: "$25"
+      position: 1 // middle
     },
     {
-      name: "WASH & FOLD",
-      image: "/api/placeholder/400/320",
+      id: 3,
+      name: "E-COMMERCE DELIVERY",
+      image: "/apps/eCommerceDelivery.svg",
       pageNum: 3,
-      subtitle: "Fresh Laundry",
-      price: "$15"
+      position: 0// right (highlighted)
     },
     {
-      name: "IRONING SERVICE",
-      image: "/api/placeholder/400/320",
-      pageNum: 4,
-      subtitle: "Crisp & Clean",
-      price: "$18"
-    },
-    {
-      name: "STAIN REMOVAL",
-      image: "/api/placeholder/400/320",
-      pageNum: 5,
-      subtitle: "Special Treatment",
-      price: "$20"
-    },
-    {
-      name: "ALTERATIONS",
-      image: "/api/placeholder/400/320",
-      pageNum: 6,
-      subtitle: "Perfect Fit",
-      price: "$30"
-    },
-    {
-      name: "EXPRESS SERVICE",
-      image: "/api/placeholder/400/320",
+      id: 4,
+      name: "FOOD DELIVERY",
+      image: "/apps/grocery.svg",
       pageNum: 7,
-      subtitle: "Ready in 2 hours",
-      price: "$35"
+      position: 3 // off-screen
     },
-  ];
-
-  // Initialize left carousel slides based on active index
-  const getInitialSlides = (index) => {
-    // Calculate the indices for the 3 visible slides
-    const indices = [
-      (index + 2) % services.length,
-      (index + 1) % services.length,
-      index
-    ];
-    
-    return indices.map((idx) => ({
-      id: idx + 1,
-      title: services[idx].name,
-      subtitle: services[idx].subtitle,
-      price: services[idx].price
-    }));
-  };
-
-  // State for the left side carousel
-  const [slides, setSlides] = useState(() => getInitialSlides(activeIndex));
-  const [isAnimating, setIsAnimating] = useState(false);
-  const timerRef = useRef(null);
-  const mainTimerRef = useRef(null);
-
-  // Initialize scroll position
+    {
+      id: 5,
+      name: "LAUNDRY SERVICE",
+      image: "/apps/Taxi.svg",
+      pageNum: 6,
+      position: 4
+    },
+    {
+      id: 6,
+      name: "ONLINE CONSULTANT",
+      image: "/apps/onlineConsultant.svg",
+      pageNum: 5,
+      position: 5
+    },
+    {
+      id: 7,
+      name: "HOME SERVICES",
+      image: "/apps/homeServices.svg",
+      pageNum: 4,
+      position: 6
+    },
+  ]);
+  
+  // Get the currently active service (position 2)
+  const activeService = services.find(service => service.position === 2) || services[2];
+  
+  // State to track screen size
+  const [screenSize, setScreenSize] = useState('lg');
+  
+  // Auto slide effect
   useEffect(() => {
-    if (carouselRef.current) {
-      // Start at the beginning
-      carouselRef.current.scrollLeft = 0;
-    }
-  }, []);
-
-  // Function to update everything simultaneously
-  const updateEverything = () => {
-    // Calculate the next active index (moving right to left)
-    const nextIndex = (activeIndex - 1 + services.length) % services.length;
-    
-    // Update active index
-    setActiveIndex(nextIndex);
-    
-    // Update left carousel
-    if (!isAnimating) {
-      setIsAnimating(true);
-      const nextVisibleIndex = (activeIndex + 0) % services.length; // Show the current activeIndex in the 3rd position
-      
-      // Create a new slide that will enter from the left
-      const newSlide = {
-        id: Date.now(), // Unique ID
-        title: services[nextVisibleIndex].name,
-        subtitle: services[nextVisibleIndex].subtitle,
-        price: services[nextVisibleIndex].price
-      };
-      
-      // Add the new slide to the beginning and remove the last one
-      setSlides(prevSlides => {
-        const newSlides = [newSlide, ...prevSlides.slice(0, 2)];
-        return newSlides;
+    const interval = setInterval(() => {
+      // Move slides one position to the right
+      setServices(prevServices => {
+        return prevServices.map(service => {
+          // Advance each slide one position
+          const newPosition = (service.position + 1) % prevServices.length;
+          return { ...service, position: newPosition };
+        });
       });
-      
-      setTimeout(() => {
-        setIsAnimating(false);
-      }, 500);
-    }
+    }, 3000);
     
-    // Update main carousel scrolling
-    if (carouselRef.current) {
-      const itemWidth = carouselRef.current.offsetWidth / 3; // Since we're showing 3 items at once
-      const nextScrollIndex = (Math.round(carouselRef.current.scrollLeft / itemWidth) + 1) % services.length;
-      carouselRef.current.scrollTo({
-        left: nextScrollIndex * itemWidth,
-        behavior: 'smooth'
-      });
-    }
-  };
-
-  // Auto-rotate everything together
-  useEffect(() => {
-    mainTimerRef.current = setInterval(updateEverything, 3000);
-    return () => clearInterval(mainTimerRef.current);
-  }, [activeIndex, isAnimating, services.length]);
-
-  // Clear individual timers to prevent conflicts
-  useEffect(() => {
+    // Handle screen resize
+    const handleResize = () => {
+      if (window.innerWidth < 640) {
+        setScreenSize('sm');
+      } else if (window.innerWidth < 768) {
+        setScreenSize('md');
+      } else {
+        setScreenSize('lg');
+      }
+    };
+    
+    // Set initial size
+    handleResize();
+    
+    // Add resize listener
+    window.addEventListener('resize', handleResize);
+    
     return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
+      clearInterval(interval);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
-  // Left carousel manual advance (also updates everything)
-  const advance = () => {
-    // Clear the automatic timer to prevent conflicts
-    if (mainTimerRef.current) {
-      clearInterval(mainTimerRef.current);
+  // Calculate exact position for each slide
+  const getXPosition = (position) => {
+    switch(position) {
+      case 0: return '-110%'; // Far left
+      case 1: return '-40%';  // Left
+      case 2: return '30%';   // Center/active
+      case 3: return '100%';  // Right
+      case 4: return '170%';  // Far right
+      case 5: return '240%';  // Off-screen
+      case 6: return '310%';  // Off-screen
+      default: return '0%';
     }
-    
-    // Update everything at once
-    updateEverything();
-    
-    // Restart the automatic timer
-    mainTimerRef.current = setInterval(updateEverything, 3000);
   };
-
+  
+  // Set visible slides based on screen size
+  const getVisibleSlides = () => {
+    if (screenSize === 'sm') {
+      // Show only 1 slide on small screens
+      return services.filter(service => service.position === 2);
+    } else if (screenSize === 'md') {
+      // Show 2 slides on medium screens
+      return services.filter(service => service.position >= 1 && service.position <= 2);
+    } else {
+      // Show 3 slides on large screens (default behavior)
+      return services.filter(service => service.position >= 0 && service.position < 3);
+    }
+  };
+  
+  const visibleSlides = getVisibleSlides();
 
   return (
     <div className="bg-black pt-20">
-      <div className="w-full px-5 md:max-w-5xl lg:max-w-[88rem] mx-auto flex flex-col sm:flex-row py-16">
+      <div className="w-full px-5 md:max-w-5xl lg:max-w-[88rem] gap-8 mx-auto flex flex-col sm:flex-row pt-6 pb-4">
         {/* Left section - Carousel */}
         <div className="w-full sm:w-1/2 mb-8 sm:mb-0">
-          <div className="w-full max-w-2xl mx-auto bg-black rounded-lg">
-            <h2 className="text-2xl font-bold mb-4 ml-2 text-white">Services</h2>
-            
-            <div className="relative overflow-hidden">
-              <div className={`flex transition-all duration-500 ease-in-out`}>
-                {slides.map((slide, index) => (
-                  <div 
-                    key={slide.id} 
-                    className={`flex-none w-1/3 p-2 transition-opacity duration-300 ${
-                      index === 2 ? 'opacity-100' : 'opacity-60'
-                    }`}
+          <div className="w-full h-full max-w-2xl mx-auto bg-black rounded-lg">
+            <div className="relative overflow-hidden h-full pr-8">
+              <div className="absolute inset-0 flex items-center justify-center xl:w-[50rem] xl:h-[34rem] 2xl:w-[54rem] 2xl:h-full">
+                {visibleSlides.map(service => (
+                  <div
+                    key={service.id}
+                    className="absolute transition-all duration-700 ease-in-out rounded-2xl overflow-hidden h-full"
                     style={{
-                      transform: isAnimating && index === 0 ? 'translateX(-100%)' : 'translateX(0)',
-                      opacity: isAnimating && index === 0 ? 0 : index === 2 ? 1 : 0.6,
-                      transition: 'transform 500ms ease-in-out, opacity 500ms ease-in-out'
+                      opacity: service.position === 2 ? 1 : 
+                              service.position === 1 ? 0.6 : 
+                              service.position === 3 ? 0.4 : 0.2, // Make position 3 (rightmost) more visible
+                      transform: `translateX(${getXPosition(service.position)}) scale(${service.position === 2 ? 1.05 : 0.9})`,
+                      width: service.position === 2 ? '40%' : '30%',
+                      height: service.position === 2 ? '80%' : '70%',
+                      zIndex: 30 - service.position * 10,
                     }}
                   >
-                    <div className="bg-gray-800 text-white rounded-lg overflow-hidden shadow-lg h-64 relative">
-                      <div className="p-6 h-full flex flex-col justify-between">
-                        <div>
-                          <h3 className="text-xl font-bold">{slide.title}</h3>
-                          <p className="text-gray-400 mt-2">{slide.subtitle}</p>
-                        </div>
-                        
-                        <div className="absolute bottom-4 right-4 bg-black bg-opacity-50 px-3 py-1 rounded-md">
-                          <span className="text-xs text-gray-400">min.</span>
-                          <p className="text-xl font-bold">{slide.price}</p>
-                        </div>
+                    <div className="bg-transparent text-white rounded-2xl overflow-hidden shadow-lg h-full relative">
+                      <div className="relative w-full h-full">
+                        <Image 
+                          src={service.image}
+                          alt={`${service.name} image`}
+                          fill
+                          className="object-contain"
+                        />
                       </div>
                     </div>
                   </div>
                 ))}
               </div>
-              
-              <button 
-                onClick={advance} 
-                className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md z-10"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-              </button>
-            </div>
-            
-            <div className="flex justify-center mt-4 space-x-1">
-              {services.map((_, i) => (
-                <div 
-                  key={i} 
-                  className={`h-2 w-2 rounded-full ${i === activeIndex ? 'bg-red-500' : 'bg-gray-400'}`} 
-                />
-              ))}
             </div>
           </div>
         </div>
         
-        {/* Right section - Content exactly as in the image */}
-        <div className="text-left md:ml-8 w-full sm:w-1/2">
-          <h2 className="text-3xl mb-4 font-bold tracking-wide text-white">
+        {/* Right section - Content */}
+        <div className="text-left w-full sm:w-1/2 mb-12">
+          <h2 className="text-3xl mb-4 mt-12 font-bold tracking-wide text-white">
             Creating Strong <br />
             Solutions to Drive{" "}
             <span className="text-red-500">
@@ -233,15 +176,13 @@ const ServiceCarousel = () => {
               Digital Transformation
             </span>
           </h2>
-          <div className="h-32 relative overflow-hidden mt-8">
-            {services.map((service, idx) => (
+          <div className="h-32 relative overflow-hidden my-8">
+            {services.map((service) => (
               <h1
-                key={idx}
-                className={`text-6xl font-bold absolute transition-all duration-700 w-full text-white ${
-                  idx === activeIndex
+                key={service.id}
+                className={`text-6xl font-bold bg-gradient-to-b from-neutral-50 from-40% to-[#171717]  bg-clip-text text-transparent absolute transition-all duration-500 w-full  ${
+                  service.position === 2
                     ? "opacity-100 transform translate-y-0"
-                    : idx === (activeIndex + 1) % services.length
-                    ? "opacity-0 transform translate-y-full"
                     : "opacity-0 transform -translate-y-full"
                 }`}
               >
@@ -249,26 +190,24 @@ const ServiceCarousel = () => {
               </h1>
             ))}
           </div>
-          <button className="bg-red-500 hover:bg-red-600 text-white px-8 py-4 rounded-lg mb-12 flex items-center text-xl">
+          <button className="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-lg mb-5 flex items-center text-xl transition-all duration-300 transform hover:scale-105">
             Live Demo <span className="ml-3 text-2xl">→</span>
           </button>
           <div className="flex items-center">
             <div className="relative h-24 w-32 overflow-hidden">
-              {services.map((service, idx) => (
+              {services.map((service) => (
                 <div
-                  key={idx}
-                  className={`absolute text-6xl font-bold transition-all duration-700 w-auto bg-gradient-to-b from-white to-[#171717] bg-clip-text text-transparent ${
-                    idx === activeIndex
+                  key={service.id}
+                  className={`absolute text-6xl font-bold transition-all duration-500 w-auto bg-gradient-to-b from-white to-[#171717] bg-clip-text text-transparent ${
+                    service.position === 2
                       ? "opacity-100 transform translate-y-0"
-                      : idx === (activeIndex + 1) % services.length
-                      ? "opacity-0 transform translate-y-full"
                       : "opacity-0 transform -translate-y-full"
                   }`}
                 >
                   <span>{service.pageNum}</span>
                 </div>
               ))}
-              <span className="ml-10 text-6xl font-bold bg-gradient-to-b from-white to-[#171717] bg-clip-text text-transparent">
+              <span className="ml-10 text-6xl font-bold bg-gradient-to-b from-white to-[#171717] bg-clip-text text-transparent tracking-widest">
                 /7
               </span>
             </div>
