@@ -22,9 +22,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="overflow-x-hidden"> 
       <body
-        className={`${inter.variable} ${poppins.variable} antialiased overflow-x-clip`}
+        className={`${inter.variable} ${poppins.variable} antialiased overflow-x-hidden`}
       >
          <Navbar/>
         {children}

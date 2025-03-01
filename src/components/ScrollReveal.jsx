@@ -10,9 +10,17 @@ const ANIMATIONS = {
   fadeSlideRight: 'opacity-0 -translate-x-64 scale-95',
   slightLeft : 'opacity-0 translate-x-16',
   slightRight : 'opacity-0 -translate-x-16',
+  slightDown : 'opacity-0 -translate-y-16',
+  slightUp : 'opacity-0 translate-y-16',
+  doubleSlightDown : 'opacity-0 -translate-y-32',
   fadeIn: 'opacity-0 scale-95', // Simple fade in with slight scale
   scaleUp: 'opacity-0 scale-75', // Scale up animation
   flipIn: 'opacity-0 rotateX-90', // Flip in animation
+  slideBottomLeft: 'opacity-0 translate-x-32 translate-y-32', // From bottom right to top left
+  slideBottomRight: 'opacity-0 -translate-x-32 translate-y-32',
+  slightBottomLeft: 'opacity-0 translate-x-16 translate-y-16', // From bottom right to top left
+  slightBottomRight: 'opacity-0 -translate-x-16 translate-y-16',
+  spinIn: 'opacity-0 rotate-180 scale-90',
 };
 
 const EASINGS = {

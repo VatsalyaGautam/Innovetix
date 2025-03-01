@@ -55,11 +55,10 @@ const ServiceCarousel = () => {
     },
   ]);
   
-  // Get the currently active service (position 2)
-  const activeService = services.find(service => service.position === 2) || services[2];
+
   
   // State to track screen size
-  const [screenSize, setScreenSize] = useState('lg');
+  const [screenSize, setScreenSize] = useState('xl');
   
   // Auto slide effect
   useEffect(() => {
@@ -80,8 +79,16 @@ const ServiceCarousel = () => {
         setScreenSize('sm');
       } else if (window.innerWidth < 768) {
         setScreenSize('md');
-      } else {
+
+      } 
+      else if (window.innerWidth < 1024) {
         setScreenSize('lg');
+      } 
+      else if (window.innerWidth < 1280) {
+        setScreenSize('xl');
+      } 
+      else {
+        setScreenSize('2xl');
       }
     };
     
@@ -117,7 +124,12 @@ const ServiceCarousel = () => {
       // Show only 1 slide on small screens
       return services.filter(service => service.position === 2);
     } else if (screenSize === 'md') {
-      // Show 2 slides on medium screens
+      return services.filter(service => service.position >= 1 && service.position <= 2);
+    }
+    else if (screenSize === 'lg') {
+      return services.filter(service => service.position >= 1 && service.position <= 2);
+    } 
+    else if (screenSize === 'xl') {
       return services.filter(service => service.position >= 1 && service.position <= 2);
     } else {
       // Show 3 slides on large screens (default behavior)
@@ -128,13 +140,18 @@ const ServiceCarousel = () => {
   const visibleSlides = getVisibleSlides();
 
   return (
-    <div className="bg-black pt-20">
-      <div className="w-full px-5 md:max-w-5xl lg:max-w-[88rem] gap-8 mx-auto flex flex-col sm:flex-row pt-6 pb-4">
+    <div className="bg-[rgb(23,23,23)] pt-20 mt-4 ">
+      <div className="w-full px-5 md:max-w-5xl lg:max-w-[88rem]  sm:gap-8 mx-auto flex flex-col sm:flex-row pt-6 pb-4 h-80 sm:h-[26rem] md:h-full">
         {/* Left section - Carousel */}
-        <div className="w-full sm:w-1/2 mb-8 sm:mb-0">
-          <div className="w-full h-full max-w-2xl mx-auto bg-black rounded-lg">
+        <div className="w-full sm:w-1/2 mb-0">
+          <div className="w-full h-full max-w-2xl mx-auto bg-[rgb(23,23,23)]rounded-lg">
             <div className="relative overflow-hidden h-full pr-8">
-              <div className="absolute inset-0 flex items-center justify-center xl:w-[50rem] xl:h-[34rem] 2xl:w-[54rem] 2xl:h-full">
+              <div className="absolute inset-0 flex items-center justify-center 
+              sm:w-[35rem] sm:h-[23rem] sm:-ml-[9rem]
+              md:w-[43rem] md:-ml-[11rem] md:h-[29rem]
+              lg:w-[55rem] lg:-ml-48
+              xl:w-[50rem] xl:h-[34rem] xl:ml-0
+              2xl:w-[54rem] 2xl:h-full">
                 {visibleSlides.map(service => (
                   <div
                     key={service.id}
@@ -167,8 +184,8 @@ const ServiceCarousel = () => {
         </div>
         
         {/* Right section - Content */}
-        <div className="text-left w-full sm:w-1/2 mb-12">
-          <h2 className="text-3xl mb-4 mt-12 font-bold tracking-wide text-white">
+        <div className="sm:text-left w-full flex flex-col justify-center text-center sm:block sm:w-1/2 mb-12">
+          <h2 className="hidden sm:block text-3xl mb-4 mt-4 md:mt-12 font-bold  leading-tight md:leading-snug  md:tracking-wide text-white">
             Creating Strong <br />
             Solutions to Drive{" "}
             <span className="text-red-500">
@@ -176,7 +193,18 @@ const ServiceCarousel = () => {
               Digital Transformation
             </span>
           </h2>
-          <div className="h-32 relative overflow-hidden my-8">
+
+          <div className="flex justify-center items-center sm:hidden   text-3xl mb-4 mt-4  font-bold  leading-tight  text-white">
+            <h2 className='max-w-80'>
+            Creating Strong 
+            Solutions to Drive{" "}
+            <span className="text-red-500">
+              Your
+              Digital Transformation
+            </span>
+            </h2>
+          </div>
+          <div className="h-32 relative overflow-hidden mt-4 md:my-8">
             {services.map((service) => (
               <h1
                 key={service.id}
@@ -190,15 +218,17 @@ const ServiceCarousel = () => {
               </h1>
             ))}
           </div>
-          <button className="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-lg mb-5 flex items-center text-xl transition-all duration-300 transform hover:scale-105">
+          <div className=" flex items-center justify-center sm:block -mt-12 sm:mt-0">
+          <button className="bg-red-500 hover:bg-red-600 text-white px-3  sm:px-4 sm:py-1 md:px-6 md:py-2 rounded-lg mb-5 flex items-center text-xl transition-all duration-300 transform hover:scale-105">
             Live Demo <span className="ml-3 text-2xl">→</span>
           </button>
-          <div className="flex items-center">
+          </div>
+          <div className=" hidden sm:flex items-center">
             <div className="relative h-24 w-32 overflow-hidden">
               {services.map((service) => (
                 <div
                   key={service.id}
-                  className={`absolute text-6xl font-bold transition-all duration-500 w-auto bg-gradient-to-b from-white to-[#171717] bg-clip-text text-transparent ${
+                  className={`absolute text-6xl font-bold transition-all duration-500 w-auto bg-gradient-to-b from-white to-black bg-clip-text text-transparent ${
                     service.position === 2
                       ? "opacity-100 transform translate-y-0"
                       : "opacity-0 transform -translate-y-full"
@@ -207,9 +237,12 @@ const ServiceCarousel = () => {
                   <span>{service.pageNum}</span>
                 </div>
               ))}
-              <span className="ml-10 text-6xl font-bold bg-gradient-to-b from-white to-[#171717] bg-clip-text text-transparent tracking-widest">
+              <span className="ml-6 md:ml-10 text-6xl font-bold bg-gradient-to-b from-white to-black  bg-clip-text text-transparent tracking-widest">
                 /7
               </span>
+              <div>
+                <Image src="/apps/rightArrow.svg" width={72} height={14.4} alt="right arrow" className='opacity-90 w-10 sm:w-12  md:w-[4.5rem] -mt-2 sm:-mt-3'/>
+              </div>
             </div>
           </div>
         </div>

@@ -336,21 +336,21 @@ function page() {
               Backed By Our Premium Application Development Services
             </p>
             <button className="group relative bg-gradient-to-r from-[#C59E12] to-[#FFD700] overflow-hidden transition-all duration-500 text-white font-bold px-8 py-3 rounded-lg flex items-center gap-2 mx-auto text-lg shadow-lg hover:shadow-xl hover:scale-105">
-  {/* Hover effect element */}
-  <span className="absolute inset-0 w-full h-full bg-white transform scale-x-0 origin-left transition-transform duration-500 ease-in-out group-hover:scale-x-100 -z-10"></span>
+              {/* Hover effect element */}
+              <span className="absolute inset-0 w-full h-full bg-white transform scale-x-0 origin-left transition-transform duration-500 ease-in-out group-hover:scale-x-100 -z-10"></span>
 
-  {/* Dynamic background change on hover */}
-  <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#FFD700] to-[#C59E12] opacity-0 transition-opacity duration-500 group-hover:opacity-100 -z-10"></span>
+              {/* Dynamic background change on hover */}
+              <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#FFD700] to-[#C59E12] opacity-0 transition-opacity duration-500 group-hover:opacity-100 -z-10"></span>
 
-  {/* Unified Text & Arrow for Color Sync */}
-  <span className="relative z-10 flex items-center gap-2 transition-colors duration-300 ease-in-out group-hover:text-black">
-    Let&apos;s Discuss
-    <ArrowRight
-      className="transform transition-transform duration-500 group-hover:translate-x-2 scale-100 group-hover:scale-110"
-      size={24}
-    />
-  </span>
-</button>
+              {/* Unified Text & Arrow for Color Sync */}
+              <span className="relative z-10 flex items-center gap-2 transition-colors duration-300 ease-in-out group-hover:text-black">
+                Let&apos;s Discuss
+                <ArrowRight
+                  className="transform transition-transform duration-500 group-hover:translate-x-2 scale-100 group-hover:scale-110"
+                  size={24}
+                />
+              </span>
+            </button>
           </ScrollReveal>
         </div>
       </div>
@@ -426,6 +426,7 @@ function page() {
               easing="smooth"
               className="text-center"
             >
+            
               <div
                 id="outOfContextImageDiv"
                 className="w-16 h-16 bg-[#C59E12] rounded-full mx-auto mb-6 relative flex items-center justify-center"
