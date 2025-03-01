@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import { FileText, Award, Layout, Target, Presentation } from 'lucide-react';
 
 const ANIMATIONS = {
   slideLeft: 'opacity-0 translate-x-64', // Slide from right to left
@@ -72,31 +73,33 @@ const StatsSection = () => {
   const stats = [
     {
       title: "Successful Legal Registrations",
-      count: "300+"
+      count: "300+",
+      icon: <FileText className="text-green-500" size={20} />
     },
     {
       title: "Business Plans Developed",
-      count: "1000+"
+      count: "1000+",
+      icon: <Award className="text-green-500" size={20} />
     },
     {
       title: "UI/UX Designs Crafted",
-      count: "1500+"
+      count: "1500+",
+      icon: <Layout className="text-green-500" size={20} />
     },
     {
       title: "Full-Scale Marketing Roadmaps",
-      count: "1200+"
+      count: "1200+",
+      icon: <Target className="text-green-500" size={20} />
     },
     {
       title: "Investor-Ready Pitch Decks",
-      count: "850+"
+      count: "850+",
+      icon: <Presentation className="text-green-500" size={20} />
     }
   ];
 
-  // Set a higher stagger value to make the one-by-one effect more noticeable
-   // 300ms between each card appearance
-
   return (
-    <div className="w-full bg-[#DCD9C4] py-28 px-4 sm:px-6 md:px-8 mb-20">
+    <div className="w-full bg-[#ECFCF4] py-28 px-4 sm:px-6 md:px-8 ">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
           {stats.map((stat, index) => (
@@ -106,20 +109,19 @@ const StatsSection = () => {
               duration={800} 
               delay={200*index}
               easing="gentle"
-              // Add stagger delay between items
             >
               <div 
-                className="bg-white p-6 rounded shadow-lg flex flex-col justify-between min-h-[240px]"
-                style={{
-                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.6)',
-                }}
+                className="bg-white p-6 rounded-2xl border-2 border-[#15D776] flex flex-col justify-between min-h-[240px]"
               >
                 <h3 className="text-2xl font-medium text-gray-900 mb-4">
                   {stat.title}
                 </h3>
-                <p className="text-4xl font-semibold text-gray-900">
-                  {stat.count}
-                </p>
+                <div className="flex items-center justify-between">
+                  <p className="text-4xl font-semibold text-gray-900">
+                    {stat.count}
+                  </p>
+                  {stat.icon}
+                </div>
               </div>
             </ScrollReveal>
           ))}

@@ -11,7 +11,7 @@ const MobileMenuButton = () => {
       <button
         id="menu-button"
         onClick={() => setIsOpen(!isOpen)}
-        className="p-3 ml-2 font-semibold rounded-lg text-white md:hidden bg-purple-600 border-1 hover:bg-gray-100 animate-pulse"
+        className="p-2 ml-2 font-semibold rounded-lg text-white md:hidden bg-purple-800 border-1 hover:bg-purple-800 "
       >
         {isOpen ? <X size={24} /> : <Menu size={24} />}
       </button>

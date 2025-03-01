@@ -5,7 +5,7 @@ import Link from "next/link";
 const Footer = () => {
   return (
 <>
-    <div className='bg-gray-200 h-16 w-full'></div>
+   
     <footer className="bg-gradient-to-br from-blue-50 to-blue-100 py-8 border-t border-black">
       
       <div className="container mx-auto px-4">

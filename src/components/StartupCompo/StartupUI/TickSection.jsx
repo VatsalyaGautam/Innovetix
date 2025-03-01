@@ -1,74 +1,7 @@
 "use client"
 import React, { useState, useRef, useEffect } from 'react';
+import ScrollReveal from '@/components/ScrollReveal';
 
-// Animation utilities from previous example
-const ANIMATIONS = {
-  slideLeft: 'opacity-0 translate-x-64', // Slide from right to left
-  slideRight: 'opacity-0 -translate-x-64', // Slide from left to right
-  slideDown: 'opacity-0 -translate-y-64', // Slide from top to bottom
-  slideUp: 'opacity-0 translate-y-64', // Slide from bottom to top
-  fadeIn: 'opacity-0',
-  scaleUp: 'opacity-0 scale-95',
-};
-
-const EASINGS = {
-  smooth: 'cubic-bezier(0.4, 0, 0.2, 1)',
-  spring: 'cubic-bezier(0.175, 0.885, 0.32, 1.275)',
-  bouncy: 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
-  gentle: 'cubic-bezier(0.34, 1.56, 0.64, 1)',
-};
-
-const ScrollReveal = ({
-  children,
-  className = '',
-  animation = 'slideLeft',
-  duration = 800,
-  delay = 0,
-  easing = 'smooth',
-  index = 0,
-  stagger = 0,
-}) => {
-  const elementRef = useRef(null);
-  
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const element = entry.target;
-            const totalDelay = delay + (index * stagger);
-            element.style.transitionDelay = `${totalDelay}ms`;
-            element.style.opacity = '1';
-            element.style.transform = 'translate(0, 0) scale(1)';
-            observer.unobserve(element);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-    
-    if (elementRef.current) {
-      observer.observe(elementRef.current);
-    }
-    
-    return () => observer.disconnect();
-  }, [delay, index, stagger]);
-  
-  const baseStyle = {
-    willChange: 'transform, opacity',
-    transition: `all ${duration}ms ${EASINGS[easing]}`,
-  };
-  
-  return (
-    <div
-      ref={elementRef}
-      className={`${ANIMATIONS[animation]} ${className}`}
-      style={baseStyle}
-    >
-      {children}
-    </div>
-  );
-};
 
 const PricingSection = () => {
   const [selectedServices, setSelectedServices] = useState([]);
@@ -167,7 +100,7 @@ const PricingSection = () => {
         {/* Services Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           {/* Service Cards */}
-          <div className="col-span-1 lg:col-span-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="col-span-1 lg:col-span-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
             {services.map((service, index) => (
               <ScrollReveal
                 key={service.id}
@@ -196,7 +129,7 @@ const PricingSection = () => {
                         </svg>
                       )}
                     </div>
-                    <h3 className="text-xl text-white font-medium">{service.title}</h3>
+                    <h3 className="text-base xl:text-xl text-white font-medium">{service.title}</h3>
                   </div>
                   <div className="space-y-2">
                     {service.features.map((feature, idx) => (
@@ -204,7 +137,7 @@ const PricingSection = () => {
                         <svg className="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
-                        <span>{feature}</span>
+                        <span className='text-base'>{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -217,7 +150,7 @@ const PricingSection = () => {
           <div className="sm:flex lg:flex-col gap-8 lg:col-span-2">
             {/* Bundle Card */}
             <ScrollReveal
-              animation="slideLeft"
+              animation="slightLeft"
               duration={800}
               delay={700}
               easing="gentle"
@@ -248,24 +181,24 @@ const PricingSection = () => {
 
             {/* Price Summary */}
             <ScrollReveal
-              animation="slideLeft"
+              animation="slightLeft"
               duration={800}
               delay={900}
               easing="smooth"
             >
-              <div className="bg-[#123F28] p-4 lg:h-[20rem] rounded-xl mt-8 sm:mt-0 flex flex-col justify-center">
-                <div className="text-gray-300 mb-4">
+              <div className="bg-[#123F28] p-4 h-full lg:h-[30vh] 2xl:h-[18rem] rounded-xl mt-8 sm:mt-0 flex flex-col justify-center">
+                <div className="text-gray-300 lg:mb-4">
                   {selectedServices.length}/6 Selected
                 </div>
-                <div className="mb-6">
+                <div className="lg:mb-6">
                   <div className="text-gray-300">Amount</div>
                   <div className="text-4xl font-bold text-white">
                     ${selectedServices.length === services.length ? 999 : calculateTotal()}
                   </div>
                 </div>
-                <div className='w-full h-0.5 bg-[#F9F8F180] mb-4'></div>
+                <div className='w-full h-0.5 bg-[#F9F8F180] mb-1 lg:mb-4'></div>
 
-                <button className="w-full bg-[#E8E6DD] text-sm text-[#123F28] py-3 px-2 rounded-lg font-medium flex items-center justify-center gap-2">
+                <button className="w-full bg-[#E8E6DD] text-sm text-[#123F28] py-1 lg:py-3 px-2 rounded-lg font-medium flex items-center justify-center gap-2">
                   Make Payment
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
