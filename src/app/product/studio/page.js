@@ -136,7 +136,7 @@ function page() {
               </ScrollReveal>
               
               {/* Subheading with different animation */}
-              <ScrollReveal animation="slideRight" duration={800} delay={300} easing="gentle">
+              <ScrollReveal animation="slideRight" duration={800} delay={100} easing="gentle">
                 <p className="text-white text-3xl leading-snug md:leading-normal">
                   To Build Exceptional Technology Solution For Your
                   Unique Business Ideas
@@ -145,10 +145,10 @@ function page() {
             </div>
             
             {/* Button with bouncy animation */}
-            <ScrollReveal animation="slideUp" duration={800} delay={400} easing="bouncy">
+            <ScrollReveal animation="slideUp" duration={800} delay={300} easing="bouncy">
               <button className="border-2 text-left p-2 sm:p-3 md:p-4 text-white text-2xl justify-around w-fit sm:w-auto max-w-80 border-white flex hover:bg-white hover:text-black transition-colors duration-300">
                 Book Free Consulation{" "}
-                <ScrollReveal animation="slideLeft" duration={700} delay={700} easing="spring">
+                <ScrollReveal animation="slideLeft" duration={700} delay={500} easing="spring">
                   <CircleArrowRight size={32} fill="white" stroke="black" />
                 </ScrollReveal>
               </button>

@@ -6,31 +6,6 @@ import ShinyButton from "./ui/ShinyButton";
 import MobileMenuButton from "./ui/NavButton";
 
 const Navbar = () => {
-  const [isNavbarVisible, setIsNavbarVisible] = useState(true); // Track navbar visibility
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // Track mobile menu state
-
-  // Handle scroll events
-  useEffect(() => {
-    let lastScrollY = window.scrollY;
-
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        // Scrolling down and past 100px
-        setIsNavbarVisible(false);
-      } else if (currentScrollY < lastScrollY) {
-        // Scrolling up
-        setIsNavbarVisible(true);
-      }
-
-      lastScrollY = currentScrollY;
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   // Navigation items with dropdown configurations
   const navigationItems = [
     { title: "Home", link: "/" },
@@ -256,6 +231,47 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
+
+      {/* Separate script tag that will be placed at the end of the body */}
+      <script
+        id="navbar-script"
+        dangerouslySetInnerHTML={{
+          __html: `
+            document.addEventListener('DOMContentLoaded', function() {
+              let lastScrollY = window.scrollY;
+              const navbar = document.querySelector('.navbar');
+
+              window.addEventListener('scroll', () => {
+                const currentScrollY = window.scrollY;
+
+                if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                  // Scrolling down and past 100px
+                  navbar.classList.remove('show');
+                  navbar.classList.add('hide');
+                } else if (currentScrollY < lastScrollY) {
+                  // Scrolling up
+                  navbar.classList.remove('hide');
+                  navbar.classList.add('show');
+                }
+
+                lastScrollY = currentScrollY;
+              });
+
+              // Handle mobile menu toggle
+              const mobileMenuButton = document.querySelector('#mobile-menu-button');
+              const mobileMenu = document.querySelector('#mobile-menu');
+              
+              if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                  mobileMenu.classList.toggle('hidden');
+                });
+              }
+            });
+          `,
+        }}
+      />
+
+     
     </>
   );
 };

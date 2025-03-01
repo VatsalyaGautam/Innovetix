@@ -69,3 +69,64 @@
 #outOfContextImageDiv > span{
   overflow: visible!important;
 }
+
+
+
+/* Navbar animation */
+
+  /* Initial Animation */
+  @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Scroll-Based Hide/Show Animation */
+  @keyframes slideUp {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+
+  @keyframes slideDown {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background-color: black;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    animation: fadeInDown 0.5s ease-out;
+  }
+
+  /* Scroll-Based Behavior */
+  .navbar.hide {
+    animation: slideUp 0.3s ease-in-out forwards;
+  }
+
+  .navbar.show {
+    animation: slideDown 0.3s ease-in-out forwards;
+  }
+
+
+
+
+
+/* Navbar */
