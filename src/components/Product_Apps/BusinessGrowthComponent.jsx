@@ -5,18 +5,19 @@ import ScrollReveal from "@/components/ScrollReveal";
 const BusinessGrowthComponent = () => {
   return (
     <>
-      <div className="bg-[rgb(23,23,23)]  w-full flex flex-col pb-16 pt-28  overflow-hidden">
+      <div className="bg-[rgb(23,23,23)] w-full flex flex-col pb-16 pt-28 overflow-hidden">
         {/* Heading Section */}
         <ScrollReveal
           animation="slightDown"
           duration={800}
           easing="gentle"
-          className="text-center mb-12 z-10 px-5 md:max-w-5xl lg:max-w-6xl mx-auto "
+          className="text-center mb-12 z-10 px-5 md:max-w-5xl lg:max-w-6xl mx-auto"
+          disableBelow="md" // Disable below md (768px)
         >
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-2">
             Fuel Your Business Growth With
           </h1>
-          <h2 className="text-2xl md:text-3xl lg:text-4xl  font-bold text-red-500 mb-6">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-red-500 mb-6">
             Complete Technology
           </h2>
           <p className="text-gray-300 max-w-2xl mx-auto text-sm md:text-base">
@@ -30,7 +31,7 @@ const BusinessGrowthComponent = () => {
         {/* Calendar App */}
         <div className="absolute inset-0 w-full h-full">
           <svg
-            className="absolute w-full top-4 2xl:top-12 translate-y-1/2 h-1/2 "
+            className="absolute w-full top-4 2xl:top-12 translate-y-1/2 h-1/2"
             preserveAspectRatio="none"
             viewBox="0 0 1729 610"
             fill="none"
@@ -46,12 +47,13 @@ const BusinessGrowthComponent = () => {
         </div>
         <div className="relative w-full h-[500px] md:h-[550px] lg:h-[600px] z-0 px-5 max-w-[25rem] sm:max-w-[38rem] md:max-w-[42rem] lg:max-w-6xl mx-auto">
           {/* Calendar App - comes from bottom up */}
-          <div className="absolute left-1/2 top-0 transform -translate-x-1/2 z-20 h-[18rem] sm:h-auto w-[18rem] sm:w-[28rem] md:w-[30rem]  lg:w-[45rem] shadow-xl rounded-lg overflow-hidden">
+          <div className="absolute left-1/2 top-0 transform -translate-x-1/2 z-20 h-[18rem] sm:h-auto w-[18rem] sm:w-[28rem] md:w-[30rem] lg:w-[45rem] shadow-xl rounded-lg overflow-hidden">
             <ScrollReveal
               animation="slideUp"
               duration={1000}
               delay={200}
               easing="smooth"
+              disableBelow="md"
             >
               <Image
                 src="/apps/calendar-app.svg"
@@ -64,12 +66,13 @@ const BusinessGrowthComponent = () => {
           </div>
 
           {/* Food Delivery App - comes from bottom left */}
-          <div className="absolute left-0 pl-5 top-[15%] transform z-30 sm:h-auto w-[6rem] sm:w-[9rem]  md:w-[10rem] lg:w-[15rem] shadow-xl md:rounded-2xl overflow-hidden">
+          <div className="absolute left-0 pl-5 top-[15%] transform z-30 sm:h-auto w-[6rem] sm:w-[9rem] md:w-[10rem] lg:w-[15rem] shadow-xl md:rounded-2xl overflow-hidden">
             <ScrollReveal
               animation="slideBottomRight" // Bottom left to top right
               duration={1200}
               delay={300}
               easing="smooth"
+              disableBelow="md"
             >
               <Image
                 src="/apps/food-app.svg"
@@ -88,6 +91,7 @@ const BusinessGrowthComponent = () => {
               duration={1200}
               delay={300}
               easing="smooth"
+              disableBelow="md"
             >
               <Image
                 src="/apps/map-app.svg"

@@ -3,16 +3,17 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import "./globals.css";
 
+
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["300","400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
-  weight:["300","400","500","600","700","800","900"]
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata = {
@@ -22,13 +23,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="overflow-x-hidden"> 
+    <html lang="en" className="overflow-x-hidden">
       <body
         className={`${inter.variable} ${poppins.variable} antialiased overflow-x-hidden`}
       >
-         <Navbar/>
+        <Navbar />
+
         {children}
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );
