@@ -9,7 +9,7 @@ const FoodDeliveryService = () => {
         <div className="text-center mb-12">
           <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center mx-auto">
             No matter you need a Food Restaurant App or Want to start{" "}
-            <br className="hidden md:block" />
+            <br className="hidden xl:block" />
             your Food Marketplace Like Uber Eats,
             <span className="text-amber-600"> We've Got You Covered!</span>
           </h1>
@@ -23,11 +23,11 @@ const FoodDeliveryService = () => {
               <p className="text-lg font-bold text-black mb-2">
                 Single Restaurants
               </p>
-              <div className="mb-8 flex flex-col  justify-between">
+              <div className="mb-2 lg:mb-8 flex flex-col  justify-between">
               <h2 className="text-xl font-bold text-black pb-4">
               Build Food Delivery App For Your Restaurant
               </h2>
-              <p className="text-base text-black ">
+              <p className="text-base text-black block md:hidden lg:block">
               Simplify the ordering process and let your customers order directly through your mobile app
               </p>
               </div>
@@ -54,11 +54,11 @@ const FoodDeliveryService = () => {
               <p className="text-lg font-bold text-black mb-2">
               Food Chain Stores
               </p>
-              <div className="mb-8 flex flex-col justify-between">
+              <div className="mb-2 lg:mb-8 lex flex-col justify-between">
               <h2 className="text-xl font-bold text-black pb-4">
               Food Ordering & Delivery App For Restaurant Chains
               </h2>
-              <p className="text-base text-black ">
+              <p className="text-base text-black block md:hidden lg:block">
               Boost ROI for your multi-store food business with a tailor-made food delivery app solution
               </p>
               </div>
@@ -85,11 +85,11 @@ const FoodDeliveryService = () => {
               <p className="text-lg font-bold text-black mb-2">
               Food Chain Stores
               </p>
-              <div className="mb-8 flex flex-col justify-between">
+              <div className="mb-2 lg:mb-8 flex flex-col justify-between">
               <h2 className="text-xl font-bold text-black pb-4">
               Build App Like Uber Eats For Your Region
               </h2>
-              <p className="text-base text-black ">
+              <p className="text-base text-black block md:hidden lg:block">
               Start your own revenue-generating platform like Uber Eats or Zomato with a custom-built app that scales to your region’s needs
               </p>
               </div>

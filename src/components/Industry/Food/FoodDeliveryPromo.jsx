@@ -3,7 +3,7 @@ import Image from 'next/image';
 const FoodDeliveryPromo = () => {
   return (
     <div className="bg-white">
-      <div className="bg-white px-5 md:max-w-4xl lg:max-w-5xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between py-16">
+      <div className="bg-white px-5 md:max-w-4xl lg:max-w-5xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between py-8">
         {/* Left side - Text content */}
         <div className="flex flex-col space-y-6 md:w-1/2">
           <h2 className="text-xl md:text-2xl font-medium text-neutral-800">

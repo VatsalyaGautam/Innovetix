@@ -17,7 +17,7 @@ const FoodOrderingFeatures = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           {/* First Card - Red */}
           <Card className="bg-[rgb(224,48,50)] text-white p-8 rounded-md overflow-hidden relative group">
-            <Image width={313.2} height={312.45} alt="Fast Food" src='/food/pizzaBurger.svg' className='absolute w-3/5 right-[6%] bottom-[3%]'/>
+            <Image width={313.2} height={312.45} alt="Fast Food" src='/food/pizzaBurger.svg' className='absolute w-[90%] lg:w-3/5 md:right-0 lg:right-[6%] bottom-[10%] lg:bottom-[3%]'/>
             <div className="flex flex-col h-full relative">
               <div>
                 <h2 className="text-2xl font-bold mb-2">Customized The Ordering <br className='hidden md:block'/> Experience</h2>
@@ -39,7 +39,7 @@ const FoodOrderingFeatures = () => {
           {/* Second Card - Trust */}
           <div className="flex flex-col gap-6">
             
-            <Card className="bg-[url('/food/brand.svg')] bg-cover bg-no-repeat text-white p-8 rounded-md relative group  transition-colors">
+            <Card className="bg-[url('/food/brand.svg')] bg-contain bg-center bg-no-repeat text-white p-8 rounded-md relative group  transition-colors">
             <div className='absolute inset-0 bg-gradient-to-l from-[rgba(0,0,0,0.5)] to-[rgba(19,19,19,0.8)]'></div>
               <div className="flex flex-col relative">
                 <div>

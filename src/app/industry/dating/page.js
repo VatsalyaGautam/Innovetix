@@ -4,8 +4,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Paintbrush, ShieldCheck, Headphones, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import DatingModelsShowcase from "@/components/Industry/Dating/DatingModelsShowcase";
-import DatingAccordion from "@/components/Industry/Dating/DatingAccordion";
+import BottomAccordion from "@/components/BottomAccordion";
 import ScrollReveal from "@/components/ScrollReveal";
+import { foodfaqItems } from "@/lib/config";
 const page = () => {
   return (
     <>
@@ -561,7 +562,7 @@ const page = () => {
       {/* Section 7 end */}
 
       {/* Section 8 start */}
-      <DatingAccordion />
+      <BottomAccordion faqItems={foodfaqItems} />
       {/* Section 8 end */}
     </>
   );
