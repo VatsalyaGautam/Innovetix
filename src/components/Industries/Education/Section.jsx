@@ -22,7 +22,7 @@ const EduModelsShowcase = () => {
             name: "Automatic Speech Recognition & Assessment",
             icon: <Rss className="h-5 w-5 text-blue-600" />,
             description:
-              "AI facilitates audio-based learning by recognizing speech and providing feedback on pronunciation, fluency, or specific skills.",
+              "AI facilitates audio-based learning by recognizing speech and providing feedback on pronunciation or specific skills.",
             bgColor: "bg-blue-100",
           },
           {

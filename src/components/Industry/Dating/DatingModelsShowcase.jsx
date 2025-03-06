@@ -148,7 +148,7 @@ const DatingModelsShowcase = () => {
                       <h3 className="font-bold text-gray-900 group-hover:text-pink-500">
                         {model.name}
                       </h3>
-                      <p className="text-sm text-gray-600 mt-1 block h-auto sm:invisible sm:opacity-0 group-hover:visible group-hover:opacity-100 transition-opacity duration-300">
+                      <p className="text-sm text-gray-600 mt-1 block h-auto sm:invisible sm:opacity-0 group-hover:visible group-hover:opacity-100 transition-opacity">
                         {model.description}
                       </p>
                     </div>
