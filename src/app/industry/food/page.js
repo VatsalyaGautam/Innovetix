@@ -43,7 +43,7 @@ export default function page() {
                 width={335}
                 height={335}
                 alt="Pasta"
-                className="animate-rollInFromLeftCustom duration-700  ease-out"
+                className="animate-rollInFromLeftCustom duration-1000  ease-out"
               />
             </div>
 
@@ -54,7 +54,7 @@ export default function page() {
                 width={335}
                 height={332.73}
                 alt="Paneer"
-                className="animate-rollInFromRightCustom duration-700 ease-out"
+                className="animate-rollInFromRightCustom duration-1000  ease-out"
               />
             </div>
 
