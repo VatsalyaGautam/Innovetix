@@ -99,9 +99,9 @@ const StatsSection = () => {
   ];
 
   return (
-    <div className="w-full bg-[#ECFCF4] py-28 px-4 sm:px-6 md:px-8 ">
+    <div className="w-full bg-[#ECFCF4] py-28 px-6 md:px-8 ">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
           {stats.map((stat, index) => (
             <ScrollReveal 
               key={index}
@@ -111,9 +111,9 @@ const StatsSection = () => {
               easing="gentle"
             >
               <div 
-                className="bg-white p-6 rounded-2xl border-2 border-[#15D776] flex flex-col justify-between min-h-[240px]"
+                className="bg-white px-3 sm:px-6 py-6 rounded-2xl border-2 border-[#15D776] flex flex-col justify-between min-h-[180px] sm:min-h-[240px]"
               >
-                <h3 className="text-2xl font-medium text-gray-900 mb-4">
+                <h3 className="text-2xl leading-snug font-medium text-gray-900 mb-4">
                   {stat.title}
                 </h3>
                 <div className="flex items-center justify-between">

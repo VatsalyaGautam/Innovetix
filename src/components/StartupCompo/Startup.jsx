@@ -109,7 +109,7 @@ const StartupLanding = () => {
 
               {/* Bottom Row */}
               <div className="flex gap-4 justify-between">
-              <ScrollReveal animation="slideRight" duration={1200} easing="smooth"  className="bg-black rounded-2xl w-1/3 md:w-[35%] lg:w-[13vw] aspect-square">
+              <ScrollReveal animation="slightRight" duration={1200} easing="smooth"  className="bg-black rounded-2xl w-1/3 md:w-[35%] lg:w-[13vw] aspect-square">
                   <div className="relative h-full w-full">
                     <Image
                       src="/Startup/Image3.png"
@@ -121,7 +121,7 @@ const StartupLanding = () => {
                   </div>
                   </ScrollReveal>
 
-                  <ScrollReveal animation="slideUp" duration={1200} easing="smooth"  className="bg-black rounded-2xl w-2/3 md:w-[80%] xl:w-[29vw] aspect-[2/1]">
+                  <ScrollReveal animation="slightUp" duration={1200} easing="smooth"  className="bg-black rounded-2xl w-2/3 md:w-[80%] xl:w-[29vw] aspect-[2/1]">
                   <div className="relative h-full w-full">
                     <Image
                       src="/Startup/Image4.png"
@@ -224,15 +224,15 @@ const StartupLanding = () => {
             {/* Right Column - Image */}
             <ScrollReveal animation="slideLeft" duration={1000} delay={400} easing="spring">
               <div className="relative rounded-xl overflow-hidden mt-6 md:mt-0">
-                <div className="absolute top-4 right-2 bg-[#123F28] text-white p-4 rounded-xl z-10 flex flex-col items-center gap-6">
-                <div className="relative bg-[#2A754F80] p-6 rounded-2xl w-24 h-16 flex flex-col justify-center items-center shadow-lg">
+                <div className="absolute top-4 right-2 bg-[#123F28] text-white p-2 sm:p-4 rounded-xl z-10 flex flex-col items-center gap-6 ">
+                <div className="relative bg-[#2A754F80] p-6 rounded-2xl w-16 sm:w-24 h-10 sm:h-16 flex flex-col justify-center items-center shadow-lg">
         <div className="w-2/3 h-1.5 bg-[#DCD9C4] rounded-md mb-2"></div>
         <div className="w-3/4 h-1.5 bg-[#DCD9C4] rounded-md"></div>
         <div className="absolute -bottom-4    rounded-full shadow-md">
-          <img className='w-8 h-8' src="/Startup/check.png" alt="" />
+          <img className='w-6 sm:w-8 h-6 sm:h-8' src="/Startup/check.png" alt="" />
         </div>
       </div>
-                  <span className=''>VERIFIED DATA</span>
+                  <span className='text-sm sm:text-base'>VERIFIED DATA</span>
                 </div>
                 <img 
                   src="/Startup/Image9.png" 

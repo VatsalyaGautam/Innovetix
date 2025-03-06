@@ -71,7 +71,7 @@ function PhoneInputWithCountrySelector() {
 
   return (
     <div className="flex items-center justify-center" ref={ref}>
-      <div className=" p-2 rounded-md flex w-full max-w-md">
+      <div className="rounded-md flex w-full max-w-md">
         <div className="relative flex-grow">
           <div 
             className="absolute left-2 top-1/2 transform -translate-y-1/2 flex items-center cursor-pointer"
@@ -80,7 +80,7 @@ function PhoneInputWithCountrySelector() {
             <img 
               src={`https://purecatamphetamine.github.io/country-flag-icons/3x2/${selectedCountry.value}.svg`} 
               alt={selectedCountry.title} 
-              className="h-4 w-6 mr-1" 
+              className="h-4 w-6 mr-1 " 
             />
            <svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
 <line y1="-0.5" x2="8.28682" y2="-0.5" transform="matrix(0.797463 0.603368 -0.559091 0.829106 0 2.08203)" stroke="#A6A6A6"/>
@@ -93,7 +93,7 @@ function PhoneInputWithCountrySelector() {
             placeholder="Enter Phone Number"
             value={phoneNumber}
             onChange={handlePhoneChange}
-            className="w-full rounded-md py-2 pl-12 pr-3 ml-2 bg-white border border-gray-300 text-gray-700"
+            className="w-full rounded-md py-2 pl-12 pr-3 ml-1  bg-white border border-gray-300 text-gray-700"
           />
 
           {open && (

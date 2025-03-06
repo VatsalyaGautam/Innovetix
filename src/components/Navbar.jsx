@@ -110,7 +110,38 @@ const Navbar = () => {
         }
       ]
     },
-    { title: "Services", link: "#" },
+    { 
+      title: "Services", 
+      link: "#",
+      hasDropdown: true,
+      dropdownItems: [
+        {
+          title: "Ideation",
+          description: "Digital solutions for modern healthcare",
+          icon: "/icons/healthcare-icon.png",
+          link: "/services/ideation"
+        },
+        {
+          title: "Food and Beverages",
+          description: "Food",
+          icon: "/icons/food-icon.png",
+          link: "/industry/food"
+        },
+        {
+          title: "Education",
+          description: "EdTech solutions for learning",
+          icon: "/icons/education-icon.png",
+          link: "/industries/education"
+        },
+        {
+          title: "Dating and Social Media",
+          description: "Dating",
+          icon: "/icons/manufacturing-icon.png",
+          link: "/industry/dating"
+        }
+      ]
+    },
+   
     { title: "Solutions", link: "#" },
   ];
 

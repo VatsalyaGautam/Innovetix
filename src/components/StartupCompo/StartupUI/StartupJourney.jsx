@@ -110,7 +110,7 @@ const StartupJourney = () => {
         {/* Steps Section */}
         <ScrollReveal animation="slideUp" duration={1000} delay={300} easing="gentle">
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12 lg:gap-16">
           {steps.map((step, index) => (
             <div key={index} className="flex flex-col items-center text-center">
               {/* Image Container */}
