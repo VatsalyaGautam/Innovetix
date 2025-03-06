@@ -51,7 +51,7 @@ const DevelopmentProcess = () => {
   const renderSteps = (steps) => (
     <div className="flex justify-between relative ">
       <svg 
-        className="absolute inset-0 w-full h-1/4 md:h-1/3 xl:h-1/2 pointer-events-none z-0" 
+        className="absolute inset-0 w-full h-1/4 lg:h-[38%] pointer-events-none z-0" 
         viewBox="0 0 1433 1" 
         fill="none" 
         xmlns="http://www.w3.org/2000/svg"
