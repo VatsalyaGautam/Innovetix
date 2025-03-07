@@ -62,12 +62,12 @@ const Eleventh = [
 
 <>
 
-  <div className=" max-w-[100%] bg-gradient-to-t to-[#0E0C44] from-[#D83D79] mx-auto flex flex-col md:flex-row items-center sm:items-start lg:items-center justify-around px-6 sm:px-3 md:px-14 xl:px-6 py-12 mt-16 sm:mt-20 2xl:mt-20 z-10">
+  <div className=" max-w-[100%] bg-gradient-to-t to-[#0E0C44] from-[#D83D79] mx-auto flex flex-col md:flex-row items-center sm:items-start lg:items-center justify-around px-6 sm:px-10 md:px-14 xl:px-6 py-10 lg:py-0  mt-16 sm:mt-20 lg:mt-0 2xl:mt-20 z-10">
         
 
         <div className='flex max-w-7xl justify-between'>
   {/* Left Section - Text Content */}
-  <ScrollReveal animation='slightRight' duration={800} className="md:w-1/2 mb-12 md:mb-0 flex flex-col justify-evenly  md:justify-start  lg:h-[35rem] lg:space-y-10 pt-4 xl:pt-[3rem] 2xl:pt-0">
+  <ScrollReveal animation='slightRight' duration={800} className="md:w-1/2 mb-12 md:mb-0 flex flex-col justify-evenly  md:justify-center 2xl:justify-start   lg:h-[35rem] lg:space-y-10 pt-4 xl:pt-[3rem] 2xl:pt-20">
    <div className='lg:mt-10 xl:mt-0 text-white'>
    <h1 className="text-4xl sm:text-3xl md:text-4xl  xl:text-5xl font-bold mb-6 2xl:mt-16">
    A Complete Design Studio
@@ -93,7 +93,7 @@ const Eleventh = [
   </ScrollReveal>
   
   {/* Right Section - Form */}
-  <ScrollReveal animation='slightLeft' duration={800} className=" w-[100%] sm:w-auto md:w-[35%] 2xl:w-[38%] flex justify-center items-center lg:block lg:mt-10">
+  <ScrollReveal animation='slightLeft' duration={800} className=" w-[80%]  sm:w-[50%] md:w-[44%] 2xl:w-[38%] hidden sm:flex justify-center items-center  lg:mt-10">
    <Image
              src="/Serviceideation/Image1.png"
               alt="Calendar App"
@@ -117,7 +117,7 @@ const Eleventh = [
 
 <div className="w-full max-w-7xl mx-auto px-4 py-8 mt-10">
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold text-blue-900">
+        <h2 className=" md:text-3xl  2xl:text-4xl font-bold text-blue-900">
           A team of <span className="bg-pink-600 text-white px-2 py-1 rounded-md">80+</span> creative designers creating unique digital experiences, your customers will love
         </h2>
       </div>
@@ -125,7 +125,7 @@ const Eleventh = [
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* First Team Member */}
         <div className="flex flex-col items-center">
-          <div className="w-full max-w-xs mb-4">
+          <div className="w-full max-w-xs mb-4 p-5 sm:p-0">
           <Image
              src="/Serviceideation/Image3.png"
               alt="Calendar App"
@@ -142,14 +142,14 @@ const Eleventh = [
         
         {/* Second Team Member */}
         <div className="flex flex-col items-center">
-          <div className="w-full max-w-xs mb-4">
+          <div className="w-full max-w-xs mb-4 p-5 sm:p-0">
           <Image
              src="/Serviceideation/Image4.png"
               alt="Calendar App"
               width={200}
               height={200}
              
-              className="w-full h-auto"
+              className="w-full h-auto "
             />
           </div>
           <h3 className="text-xl font-bold text-center">Creative</h3>
@@ -158,7 +158,7 @@ const Eleventh = [
         
         {/* Third Team Member */}
         <div className="flex flex-col items-center">
-          <div className="w-full max-w-xs mb-4">
+          <div className="w-full max-w-xs mb-4 p-5 sm:p-0">
           <Image
              src="/Serviceideation/Image5.png"
               alt="Calendar App"
