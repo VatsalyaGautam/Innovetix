@@ -91,6 +91,12 @@ const Navbar = () => {
           link: "/industries/healthcare"
         },
         {
+          title: "Ecommerce",
+          description: "Digital solutions for modern healthcare",
+          icon: "/icons/healthcare-icon.png",
+          link: "/industries/ecommerce"
+        },
+        {
           title: "Food and Beverages",
           description: "Food",
           icon: "/icons/food-icon.png",
@@ -175,7 +181,7 @@ const Navbar = () => {
             </div>
 
             {/* Center section - Desktop Navigation */}
-            <div className="hidden md:flex items-center justify-center gap-2 lg:gap-7">
+            <div className="hidden md:flex items-center justify-center gap-2 lg:gap-4 xl:gap-7">
               {navigationItems.map((item, index) => (
                 <div key={item.title} className="relative group">
                   <Link
