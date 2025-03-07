@@ -59,15 +59,18 @@
 }
 
 
+
 #outOfContextImageDiv > span{
   overflow: visible!important;
 }
 
 
 
-/* Navbar animation */
 
- 
-
+  @media (max-width: 453px) {
+    .hideBelow453{
+      display: none !important;
+    }
+  }
 
   
