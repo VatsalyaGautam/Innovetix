@@ -25,6 +25,7 @@ const ANIMATIONS = {
   // New animations for spinning from left and right
   spinFromLeft: 'opacity-0 -translate-x-64 rotate-180 scale-90',
   spinFromRight: 'opacity-0 translate-x-64 rotate-180 scale-90',
+  slightspinFromLeft: 'opacity-0 -translate-x-16 rotate-90 scale-90',
   // More intense spinning animations
   spinRollLeft: 'opacity-0 -translate-x-64 rotate-360 scale-90',
   spinRollRight: 'opacity-0 translate-x-64 rotate-360 scale-90',
