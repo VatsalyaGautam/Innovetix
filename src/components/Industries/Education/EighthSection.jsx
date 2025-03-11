@@ -44,11 +44,7 @@ const TechStack = () => {
 
   return (
     <div className="container mx-auto px-4 py-12 max-w-7xl">
-      <ScrollReveal animation="fadeSlideLeft" duration={800}>
-        <h2 className="text-3xl font-bold text-center mb-8">
-          Powerful Tech Stack For Your Educational App
-        </h2>
-      </ScrollReveal>
+     
 
       {/* Category Headings */}
       <ScrollReveal 

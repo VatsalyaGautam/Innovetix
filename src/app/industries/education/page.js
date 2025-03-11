@@ -6,7 +6,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import EduModelsShowcase from "@/components/Industries/Education/Section";
 import DevelopmentProcess from '@/components/Industries/Education/SixthSection'
 import TechStack from  '@/components/Industries/Education/EighthSection'
-import EdTechLandingPage from "@/components/Industries/Education/Getsatrted"
+import LandingPage from "@/components/Industries/Education/Getsatrted"
 
 const EduPage = () => {
 
@@ -21,7 +21,7 @@ const EduPage = () => {
 
       {/* Content */}
      
-<EdTechLandingPage/>
+<LandingPage/>
 
     </div>
 
@@ -185,8 +185,17 @@ const EduPage = () => {
 
 
 {/* Eigth Section */}
-
+<div>
+<ScrollReveal animation="fadeSlideLeft" duration={800}>
+        <h2 className="text-3xl font-bold text-center mb-4">
+          Powerful Tech Stack For Your Educational App
+        </h2>
+      </ScrollReveal>
 <TechStack/>
+</div>
+
+
+
 
     </div>
   );

@@ -128,10 +128,10 @@ const Navbar = () => {
           link: "/services/ideation"
         },
         {
-          title: "Food and Beverages",
+          title: "Software Development",
           description: "Food",
           icon: "/icons/food-icon.png",
-          link: "/industry/food"
+          link: "/services/softwareDev"
         },
         {
           title: "Education",
